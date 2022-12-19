@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
     isLoading:false,
-    charactersData:""
+    charactersData:[]
 }
 
 const apiSlice = createSlice({

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import  apiReducer from "./api"
+import  apiReducer from "../featur/api"
  const store = configureStore({
 reducer:{
     api:apiReducer

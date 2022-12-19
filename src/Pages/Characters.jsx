@@ -8,7 +8,7 @@ import Noİmg from "../img/noİmg.jpg"
 import Pagination from '../component/Pagination';
 import NoCharacters404 from './NoCharacters404';
 import { useDispatch, useSelector } from 'react-redux';
-import {setİsLoading,setCharactersData} from "../redux/api"
+import {setİsLoading,setCharactersData} from "../featur/api"
 const Characters = () => {
   const navigate = useNavigate()
   const {name} = useParams();
@@ -43,8 +43,6 @@ const Characters = () => {
     <h2><b> Filter by status:</b></h2>
     <div className={CharactersStyle.flex}>
         <Buttonlar 
-        // charactersData={data2} 
-        // setData2={setData2} 
         dataToFilterd={dataToFilterd} 
         setDataToFilterd={setDataToFilterd}/>
     </div>
@@ -52,7 +50,7 @@ const Characters = () => {
       {currentPost?.map((person,id)=>{
         return(
           <div className={CharactersStyle.image} key={id}  
-          onClick={()=> navigate("charactersDetails",{state:person},{state:currentPost})}>
+          onClick={()=> navigate("charactersDetails",{state:person})}>
             {isLoading ? <div className={CharactersStyle.loaderDiv}>
       <ClipLoader color="#36d7b7" size={110} />
     </div>: <img src={person?.image ||Noİmg} className={CharactersStyle.cardİmg} alt="characterİmg" />}

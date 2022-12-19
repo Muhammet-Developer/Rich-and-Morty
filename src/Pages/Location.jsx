@@ -3,29 +3,49 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LocationStyle from "../scss/Location.module.scss";
 import Pagination from "../component/Pagination";
+import { useDispatch, useSelector } from "react-redux";
+import { setİsLoading } from "../featur/api";
 const Location = () => {
+  const newArray = [];
+  const [first, setFirst] = useState([])
+  const [second, setSecond] = useState([])
   const navigate = useNavigate();
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
-
+  const {charactersData,isLoading} = useSelector((state)=>state.api)
+const dispatch = useDispatch()
   const [page, setPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(3);
+  const [postsPerPage, setPostsPerPage] = useState(10);
+  const [pagesNumber, setPagesNumber] = useState(2);
 
   const [info,setİnfo] = useState({})
   const initialUrl = "https://rickandmortyapi.com/api/location";
   const location = async (url) => {
     try {
-      setLoading(true);
-      await axios(url).then((data) => 
-      {setData(data.data.results)
-        setİnfo(data.data.info)});
-      setLoading(false);
+      const response = await axios(url)
+      const data = await response?.data?.results
+      const info = await response?.data?.info
+      const pages = await response?.data?.info?.next?.split("")?.reverse()[0]
+      setFirst(data)
+      // newArray.push(...data)
+      setData(data)
+      setİnfo(info)
+      dispatch(setİsLoading(false))
     } catch (error) {
       console.log(error);
     }
   };
-  
-  
+  console.log(data);
+  // https://rickandmortyapi.com/api/location?page=6
+  const getData = async () => {
+    for(let i=2; i<8; i++){
+      const response = await axios(`${initialUrl}?page=${i}`)
+      const data = await response?.data?.results
+      setFirst([...data])
+      // newArray.push(...data)
+    }
+  }
+
   const onPrevious = () => {
     location(info.prev)
   }
@@ -36,18 +56,21 @@ const Location = () => {
   useEffect(() => {
     location(initialUrl);
   }, []);
-  const [boş, setBoş] = useState([])
+
+  useEffect(() => {
+    getData()
+  }, []);
+
+  
   const indexOfLastPost = page * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPost = data?.slice(indexOfFirstPost, indexOfLastPost);
-  // const newData = localStorage.setItem("data",JSON.stringify([...data,data]))
-  // console.log(data);
+  const currentPost = first?.slice(indexOfFirstPost, indexOfLastPost);
   return (
     <>
       <div className={LocationStyle.container}>
         {currentPost?.map((index, item) => {
           const { name, type, dimension, residents } = index;
-          var count = 0;
+          let count = 0;
           for (let key in residents) {
             count++;
           }

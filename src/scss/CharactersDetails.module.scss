@@ -3,6 +3,11 @@ $large: 425px;
 $medium: 900px;
 .container{
   display: flex;
+}.conta{
+  display: flex;
+  @media screen and (max-width: $large) {
+  flex-direction: column;
+  }
 }
 .card {
   display: inline-block;
@@ -15,6 +20,11 @@ $medium: 900px;
 
   @media screen and (max-width: $large) {
     justify-content: center;
+    .card{
+      background-color: red;
+      display: flex;
+      flex-direction: column;
+    }
   }
   .image{
     height: 450px;

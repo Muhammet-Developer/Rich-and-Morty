@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import OtherCharacters from '../component/OtherCharacters';
 import CharactersDetailsStyle from "../scss/CharactersDetails.module.scss";
 const CharactersDetails = () => {
     const {state:person} = useLocation();
-    const [loading, setLoading] = useState(false);
+
   return (
     <>
+    <div className={CharactersDetailsStyle.conta}>
+
     <div className={CharactersDetailsStyle.container}>
     <article className={CharactersDetailsStyle.card}>
     <header className={CharactersDetailsStyle.cardHeader}>
@@ -30,6 +33,7 @@ const CharactersDetails = () => {
 
     </div>
     </article>
+    </div>
     <OtherCharacters/>
     </div>
     
