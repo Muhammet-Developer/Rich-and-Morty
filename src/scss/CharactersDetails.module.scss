@@ -1,0 +1,61 @@
+@import "./variable";
+$large: 425px;
+$medium: 900px;
+.container{
+  display: flex;
+}
+.card {
+  display: inline-block;
+  width: 100%;
+  max-width: 450px;
+  margin: 20px;
+  transition: all 0.3s ease;
+  text-align: left;
+  color:$brown;
+
+  @media screen and (max-width: $large) {
+    justify-content: center;
+  }
+  .image{
+    height: 450px;
+    max-height: 450px;
+    border-radius: 30px;
+    @media screen and (max-width: $large) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+ 
+}
+.dead{
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 200px;
+  
+
+}
+.alive{
+  width: 20px;
+  height: 20px;
+  background-color: $green;
+  border-radius: 200px;
+
+}
+.unknown{
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  border-radius: 200px;
+
+}
+.ul{
+  margin-top: 3px;
+  list-style: none;
+  display: flex;
+  .type{
+    width: 100%;
+    display: flex;
+    justify-content:end;
+  }
+}

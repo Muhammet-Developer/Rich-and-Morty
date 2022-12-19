@@ -1,0 +1,55 @@
+@import "./variable";
+.container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+    gap:20px;
+    color: $brown;
+    .cardİmg{
+        border-radius: 20px;
+        min-width: 300px;
+        min-height: 300px;
+    }
+    .dead{
+        width: 25px;
+        height: 25px;
+        background-color: red;
+        border-radius: 200px;
+        .div{
+            margin-left: 35px;
+        }
+    }
+    .alive{
+        width: 25px;
+        height: 25px;
+        background-color: $green;
+        border-radius: 200px;
+        .div{
+            margin-left: 35px;
+        }
+    }
+    .unknown{
+        width: 25px;
+        height: 25px;
+        background-color: gray;
+        border-radius: 200px;
+        .div{
+            margin-left: 35px;
+        }
+    }
+}
+.loaderDiv{
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ul{
+    margin-top: 3px;
+    list-style: none;
+    display: flex;
+}
