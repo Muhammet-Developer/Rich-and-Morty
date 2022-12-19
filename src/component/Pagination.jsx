@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import PaginationStyle from "../scss/Pagination.module.scss";
 const Pagination = ({
   postsPerPage,
-  totalPost,
   setPage,
   page,
   onPrevious,
@@ -10,8 +10,10 @@ const Pagination = ({
   prev,
   next,
 }) => {
+  const {charactersData} = useSelector((state)=>state.api)
+
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(totalPost / postsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(charactersData.length / postsPerPage); i++) {
     pageNumbers.push(i);
   }
   const handlePrevious = () => {

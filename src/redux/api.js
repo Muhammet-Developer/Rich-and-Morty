@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
-    isLoading:true,
-    title:"sadads"
+    isLoading:false,
+    charactersData:""
 }
 
 const apiSlice = createSlice({
     name:"api",
     initialState,
     reducers:{
-        setTitle:(state,{payload})=>{
-            state.title=payload;
+        setCharactersData:(state,{payload})=>{
+            state.charactersData=payload;
         },
         setİsLoading:(state)=>state.setİsLoading
     }
 })
 
-export const {setTitle,setİsLoading}=apiSlice.actions
-export default apiSlice
+export const {setCharactersData,setİsLoading}=apiSlice.actions
+export default apiSlice.reducer

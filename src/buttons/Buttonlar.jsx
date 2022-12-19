@@ -1,12 +1,15 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import ButtonStyle from "./Button.module.scss";
-
-const Buttonlar = ({dataToFilterd,setDataToFilterd,data2,setData2}) => {
+import {setCharactersData} from "../redux/api"
+const Buttonlar = ({dataToFilterd}) => {
+  const {charactersData} = useSelector((state)=>state.api)
+  const dispatch = useDispatch();
     const filterItem = (val) => {
         const filterAlive = dataToFilterd.filter((ölü) => {
          return ölü.status === val
         })
-        setData2(filterAlive)
+        dispatch(setCharactersData(filterAlive))
       } 
   return (
     <>
@@ -16,7 +19,7 @@ const Buttonlar = ({dataToFilterd,setDataToFilterd,data2,setData2}) => {
     </ul> */}
 
     <div className={ButtonStyle.flex}>
-           <button className={ButtonStyle.allButton} onClick={()=> setData2(dataToFilterd) }>
+           <button className={ButtonStyle.allButton} onClick={()=>  dispatch(setCharactersData(dataToFilterd)) }>
              <div className={ButtonStyle.all}></div>
              All
            </button>
