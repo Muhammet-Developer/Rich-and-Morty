@@ -9,7 +9,7 @@ const PaginationCharacters = ({
   setPage,
   page,
 }) => {
-  const {charactersData,data} = useSelector((state)=>state.api)
+  const {charactersData} = useSelector((state)=>state.api)
   const pagesNumbers = [];
   for (let i = 1; i <= Math.ceil(charactersData.length/ postsPerPage); i++) {
     pagesNumbers.push(i);

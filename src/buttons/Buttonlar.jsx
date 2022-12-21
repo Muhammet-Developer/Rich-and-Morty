@@ -6,8 +6,8 @@ const Buttonlar = ({dataToFilterd}) => {
   const {charactersData} = useSelector((state)=>state.api)
   const dispatch = useDispatch();
     const filterItem = (val) => {
-        const filterAlive = dataToFilterd.filter((ölü) => {
-         return ölü.status === val
+        const filterAlive = dataToFilterd.filter((filtered) => {
+         return filtered.status === val
         })
         dispatch(setCharactersData(filterAlive))
       } 

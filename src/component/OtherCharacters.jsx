@@ -13,7 +13,6 @@ const OtherCharacters = ({person}) => {
   const indexOfLastPost = other * otherSlice;
   const indexOfFirstPost = indexOfLastPost - otherSlice;
   const otherChacrters = charactersData?.slice(indexOfFirstPost, indexOfLastPost);
-  console.log(otherChacrters)
   return (
     <> 
       <div className={OtherCharactersStyle.container}>

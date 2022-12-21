@@ -31,7 +31,6 @@ const Characters = () => {
     })
   } 
   const[dataToFilterd,setDataToFilterd]= useState(newData)
-  console.log(residents)
  
 
   const indexOfLastPost = page * postsPerPage;
@@ -61,7 +60,7 @@ const Characters = () => {
           <>
           {loading ? <Catalog/> : 
           <div className={CharactersStyle.image} key={id}  
-          onClick={()=> navigate("charactersDetails",{state:person})}>      
+          onClick={()=> navigate(`${person.id+person.name}`,{state:person})}>      
           <img src={person?.image ||Noİmg} className={CharactersStyle.cardİmg} alt="characterİmg" />          
           <h3><b>{person?.name}</b></h3>
           <ul className={CharactersStyle.ul}>

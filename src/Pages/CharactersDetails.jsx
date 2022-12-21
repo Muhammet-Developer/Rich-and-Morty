@@ -6,7 +6,6 @@ import CharactersDetailsStyle from "../scss/CharactersDetails.module.scss";
 const CharactersDetails = () => {
     const {state:person} = useLocation();
     const { } = useSelector((state) => state.api);
-    console.log(person)
     
   return (
     <>
