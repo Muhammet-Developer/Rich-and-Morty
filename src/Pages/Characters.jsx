@@ -75,7 +75,6 @@ const Characters = () => {
           </div>
         }
           </div>
-          
           )
         })} */}
         {loading ? currentPost?.map((person,item)=>{
@@ -98,6 +97,7 @@ const Characters = () => {
           <Catalog/>
         ))}
         </div>
+
         <Pagination 
         postsPerPage={postsPerPage} 
         setPage={setPage}
