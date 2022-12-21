@@ -26,12 +26,12 @@ const Characters = () => {
         newData.push(data1.data)
         setLoading(false)
         // dispatch(setİsLoading(false))
+        dispatch(setCharactersData([...newData]))
       })
-      dispatch(setCharactersData([...newData]))
     })
   } 
   const[dataToFilterd,setDataToFilterd]= useState(newData)
- 
+
 
   const indexOfLastPost = page * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -55,11 +55,11 @@ const Characters = () => {
     </div>
     <div className={CharactersStyle.container}>
         
-      {currentPost?.map((person,id)=>{
+      {currentPost?.map((person,item)=>{
         return(
-          <>
+          <div key={item} >
           {loading ? <Catalog/> : 
-          <div className={CharactersStyle.image} key={id}  
+          <div className={CharactersStyle.image}  
           onClick={()=> navigate(`${person.id+person.name}`,{state:person})}>      
           <img src={person?.image ||Noİmg} className={CharactersStyle.cardİmg} alt="characterİmg" />          
           <h3><b>{person?.name}</b></h3>
@@ -73,7 +73,7 @@ const Characters = () => {
           </ul>
           </div>
         }
-          </>
+          </div>
           
           )
         })}

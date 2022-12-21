@@ -52,8 +52,8 @@ const allLocation = async (url) => {
   return (
     <>
       <div className={LocationStyle.container}>
-        {currentPost?.map((index, item) => {
-          const { name, type, dimension, residents } = index;
+        {currentPost?.map((item,index) => {
+          const { name, type, dimension, residents } = item;
           let count = 0;
           for (let key in residents) {
             count++;
@@ -61,7 +61,7 @@ const allLocation = async (url) => {
           return (
             <div
               className={LocationStyle.box}
-              key={item}
+              key={index}
               onClick={() => navigate(`${name}`, { state: residents })}
               >
               <h3>{name}</h3>
