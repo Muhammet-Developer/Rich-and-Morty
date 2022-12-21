@@ -4,8 +4,13 @@ $large: 425px;
     flex-direction: row;
     flex-flow: wrap;
     justify-content: end;
-    width: 60%;
+    width: 55%;
     height: 40%;
+    margin-right: 15px;
+    .başlik{
+        width: 70%;
+        display: flex;
+    }
     @media screen and (max-width: $large) {
         flex-direction: column;
         width: 100%;

@@ -13,17 +13,12 @@ const Buttonlar = ({dataToFilterd}) => {
       } 
   return (
     <>
-    {/* <ul className={ButtonStyle.ulFlex}>
-
-      <li><li className={ButtonStyle.li}></li><button className={ButtonStyle.deadbutton}>All</button></li>
-    </ul> */}
-
     <div className={ButtonStyle.flex}>
            <button className={ButtonStyle.allButton} onClick={()=>  dispatch(setCharactersData(dataToFilterd)) }>
              <div className={ButtonStyle.all}></div>
              All
            </button>
-           <button className={ButtonStyle.deadbutton} onClick={()=> filterItem("Dead")}>
+           <button className={ ButtonStyle.deadbutton} onClick={()=> filterItem("Dead")}>
              <div className={ButtonStyle.dead}></div>
              Dead
            </button>

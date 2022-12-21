@@ -1,19 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import OtherCharacters from '../component/OtherCharacters';
 import CharactersDetailsStyle from "../scss/CharactersDetails.module.scss";
 const CharactersDetails = () => {
     const {state:person} = useLocation();
+    const { deneme } = useSelector((state) => state.api);
 
+    
   return (
     <>
-    <div className={CharactersDetailsStyle.conta}>
-
+    <div className={CharactersDetailsStyle.motherContainer}>
     <div className={CharactersDetailsStyle.container}>
     <article className={CharactersDetailsStyle.card}>
     <header className={CharactersDetailsStyle.cardHeader}>
-      <img src={person?.image} className={CharactersDetailsStyle.image} alt="CharacterDetails"  />
+      <img src={person?.image || deneme.image} className={CharactersDetailsStyle.image} alt="CharacterDetails"  />
     </header>
     <div className={CharactersDetailsStyle.body}>
       <h2 className={CharactersDetailsStyle.title}>
@@ -24,7 +25,7 @@ const CharactersDetails = () => {
           <li>&nbsp;-&nbsp;</li><li>{person?.species}</li></>}
           {person?.status === "Dead" && <><li className={CharactersDetailsStyle.li}><div className={CharactersDetailsStyle.dead}></div></li><li>&nbsp;{person?.status}</li>
           <li>&nbsp;-&nbsp;</li><li>{person?.species}</li> <p className={CharactersDetailsStyle.type}>{person.type} - {person.gender}</p></>}
-          {person?.status === "unknown" && <><li className={CharactersDetailsStyle.li}><div className={CharactersDetailsStyle.unkown}></div></li><li>&nbsp;{person?.status}</li>
+          {person?.status === "unknown" && <><li className={CharactersDetailsStyle.li}><div className={CharactersDetailsStyle.unknown}></div></li><li>&nbsp;{person?.status}</li>
           <li>&nbsp;-&nbsp;</li><li>{person?.species}</li></>} 
           </ul>
       <p className={CharactersDetailsStyle.intro}>
@@ -34,7 +35,10 @@ const CharactersDetails = () => {
     </div>
     </article>
     </div>
+    <footer>
     <OtherCharacters/>
+
+    </footer>
     </div>
     
 

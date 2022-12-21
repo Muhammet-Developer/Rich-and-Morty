@@ -3,7 +3,7 @@ $large: 425px;
 $medium: 900px;
 .container{
   display: flex;
-}.conta{
+}.motherContainer{
   display: flex;
   @media screen and (max-width: $large) {
   flex-direction: column;
