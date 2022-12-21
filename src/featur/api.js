@@ -13,6 +13,7 @@ const apiSlice = createSlice({
     reducers:{
         setCharactersData:(state,{payload})=>{
             state.charactersData=payload;
+            state.isLoading=true;
         },
         // setDeneme:(state,{payload})=>{
         //     state.deneme=payload;
@@ -20,7 +21,7 @@ const apiSlice = createSlice({
         setData:(state,{payload})=>{
             state.data=payload;
         },
-        setİsLoading:(state)=>state.setİsLoading
+        // setİsLoading:(state)=>state.setİsLoading
     }
 })
 
