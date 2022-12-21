@@ -6,7 +6,7 @@ import CharactersDetailsStyle from "../scss/CharactersDetails.module.scss";
 const CharactersDetails = () => {
     const {state:person} = useLocation();
     const { deneme } = useSelector((state) => state.api);
-
+    console.log(person)
     
   return (
     <>
@@ -22,11 +22,11 @@ const CharactersDetails = () => {
       </h2>
       <ul className={CharactersDetailsStyle.ul}>
           {person?.status === "Alive" && <><li className={CharactersDetailsStyle.li}><div className={CharactersDetailsStyle.alive}></div></li><li>&nbsp;{person?.status}</li>
-          <li>&nbsp;-&nbsp;</li><li>{person?.species}</li></>}
+          <li>&nbsp;-&nbsp;</li><li>{person?.species}</li><p className={CharactersDetailsStyle.type}>{person?.type  === "" ? "unknown":person.type} - {person?.gender === "" ? "unknown" : person?.gender}</p></>}
           {person?.status === "Dead" && <><li className={CharactersDetailsStyle.li}><div className={CharactersDetailsStyle.dead}></div></li><li>&nbsp;{person?.status}</li>
-          <li>&nbsp;-&nbsp;</li><li>{person?.species}</li> <p className={CharactersDetailsStyle.type}>{person.type} - {person.gender}</p></>}
+          <li>&nbsp;-&nbsp;</li><li>{person?.species}</li> <p className={CharactersDetailsStyle.type}>{person?.type  === "" ? "unknown":person.type} - {person?.gender === "" ? "unknown" : person?.gender}</p></>}
           {person?.status === "unknown" && <><li className={CharactersDetailsStyle.li}><div className={CharactersDetailsStyle.unknown}></div></li><li>&nbsp;{person?.status}</li>
-          <li>&nbsp;-&nbsp;</li><li>{person?.species}</li></>} 
+          <li>&nbsp;-&nbsp;</li><li>{person?.species}</li><p className={CharactersDetailsStyle.type}>{person?.type  === "" ? "unknown":person.type} - {person?.gender === "" ? "unknown" : person?.gender}</p></>} 
           </ul>
       <p className={CharactersDetailsStyle.intro}>
         {person.origin.name}
@@ -36,7 +36,7 @@ const CharactersDetails = () => {
     </article>
     </div>
     <footer>
-    <OtherCharacters/>
+    <OtherCharacters person={person}/>
 
     </footer>
     </div>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import { ClipLoader } from 'react-spinners';
 import Buttonlar from '../buttons/Buttonlar';
 import CharactersStyle from "../scss/Characters.module.scss"
@@ -45,7 +45,7 @@ const Characters = () => {
 
   return (
     <>
-    {charactersData.length === 0  && <img className={CharactersStyle.images} src={NoCharacters404} alt="character not found"></img>}
+    {charactersData.length === 0  && <Link to="/"><img className={CharactersStyle.images} src={NoCharacters404} alt="character not found"></img></Link> }
     
     {charactersData.length > 1 &&  (
       <>

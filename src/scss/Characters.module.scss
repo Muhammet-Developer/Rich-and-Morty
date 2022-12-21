@@ -13,10 +13,12 @@ $large:425px;
     flex-flow: wrap;
     gap:20px;
     color: $brown;
+    padding: 10px;
     .cardİmg{
         border-radius: 20px;
         min-width: 300px;
         min-height: 300px;
+        cursor: pointer;
     }
     .dead{
         width: 25px;
