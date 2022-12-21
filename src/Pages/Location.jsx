@@ -10,13 +10,12 @@ const Location = () => {
   const [first, setFirst] = useState([])
   const navigate = useNavigate();
   // const [data, setData] = useState();
-  const {charactersData,isLoading,data} = useSelector((state)=>state.api)
+  const {isLoading,data} = useSelector((state)=>state.api)
     const dispatch = useDispatch()
   const [page, setPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(3);
   
 
-  const [info,setİnfo] = useState({})
   const initialUrl = "https://rickandmortyapi.com/api/location?page=";
 
   // const location = async (url) => {
@@ -38,36 +37,15 @@ const allLocation = async (url) => {
   while (i < 8) {
     const response = await axios(`${url}${i}`)
     data = [...data, ...response.data.results];
-   dispatch(setData(data));
+    dispatch(setData(data));
     i += 1;
   }
 };
-  // console.log(first)
-  // const onPrevious = () => {
-  //   location(info.prev)
-  // }
-  // const onNext = () => {
-  //   location(info.next)    
-  // }
 
   useEffect(() => {
     allLocation(initialUrl);
   }, []);
-  const arr = []
-  const myArray = [{
-    nas:"asd",
-    sd:"asd",
-    afs:"hghg"
-  }];
-  // console.log(myArray.length)
-  // if(arr.length === 0){
-  //   console.log("boş");
-  // }
-  // else{
-  //   console.log("dolu")
-  // }
 
-  
   const indexOfLastPost = page * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPost = data?.slice(indexOfFirstPost, indexOfLastPost);

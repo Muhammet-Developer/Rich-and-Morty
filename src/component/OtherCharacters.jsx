@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setDeneme } from "../featur/api";
 import OtherCharactersStyle from "../scss/OtherCharacters.module.scss";
 const OtherCharacters = ({person}) => {
   const navigate = useNavigate();
@@ -14,6 +13,7 @@ const OtherCharacters = ({person}) => {
   const indexOfLastPost = other * otherSlice;
   const indexOfFirstPost = indexOfLastPost - otherSlice;
   const otherChacrters = charactersData?.slice(indexOfFirstPost, indexOfLastPost);
+  console.log(otherChacrters)
   return (
     <> 
       <div className={OtherCharactersStyle.container}>
@@ -21,9 +21,11 @@ const OtherCharacters = ({person}) => {
             <h2 > &nbsp;Other Characters</h2> <br />
         </div>
         {otherChacrters?.map((other, id) => (
-          <div className={OtherCharactersStyle.block} key={id} onClick={()=> navigate(dispatch(setDeneme(other)))}>
+          <div className={OtherCharactersStyle.block} key={id} 
+          // onClick={()=> navigate(dispatch(setDeneme(other)))}
+          >
             <img
-              src={other.image}
+              src={other?.image}
               className={OtherCharactersStyle.image}
               alt=""
             />

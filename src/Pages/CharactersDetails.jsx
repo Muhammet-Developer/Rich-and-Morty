@@ -5,7 +5,7 @@ import OtherCharacters from '../component/OtherCharacters';
 import CharactersDetailsStyle from "../scss/CharactersDetails.module.scss";
 const CharactersDetails = () => {
     const {state:person} = useLocation();
-    const { deneme } = useSelector((state) => state.api);
+    const { } = useSelector((state) => state.api);
     console.log(person)
     
   return (
@@ -14,7 +14,7 @@ const CharactersDetails = () => {
     <div className={CharactersDetailsStyle.container}>
     <article className={CharactersDetailsStyle.card}>
     <header className={CharactersDetailsStyle.cardHeader}>
-      <img src={person?.image || deneme.image} className={CharactersDetailsStyle.image} alt="CharacterDetails"  />
+      <img src={person?.image} className={CharactersDetailsStyle.image} alt="CharacterDetails"  />
     </header>
     <div className={CharactersDetailsStyle.body}>
       <h2 className={CharactersDetailsStyle.title}>

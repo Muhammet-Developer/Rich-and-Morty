@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState={
     isLoading:false,
     charactersData:[],
-    deneme:[],
+    // deneme:[],
     data:[]
 }
 
@@ -14,9 +14,9 @@ const apiSlice = createSlice({
         setCharactersData:(state,{payload})=>{
             state.charactersData=payload;
         },
-        setDeneme:(state,{payload})=>{
-            state.deneme=payload;
-        },
+        // setDeneme:(state,{payload})=>{
+        //     state.deneme=payload;
+        // },
         setData:(state,{payload})=>{
             state.data=payload;
         },
@@ -24,5 +24,5 @@ const apiSlice = createSlice({
     }
 })
 
-export const {setCharactersData,setİsLoading,setDeneme,setData}=apiSlice.actions
+export const {setCharactersData,setİsLoading,setData}=apiSlice.actions
 export default apiSlice.reducer

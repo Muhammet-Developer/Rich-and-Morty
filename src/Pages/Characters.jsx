@@ -12,7 +12,6 @@ import {setİsLoading,setCharactersData} from "../featur/api"
 import Catalog from '../component/Catalog';
 const Characters = () => {
   const navigate = useNavigate()
-  const {name} = useParams();
   const dispatch= useDispatch()
   const {charactersData,isLoading} = useSelector((state)=>state.api)
   const {state:residents} = useLocation();
@@ -29,10 +28,10 @@ const Characters = () => {
         // dispatch(setİsLoading(false))
       })
       dispatch(setCharactersData([...newData]))
-      // setData2([...newData])
     })
   } 
   const[dataToFilterd,setDataToFilterd]= useState(newData)
+  console.log(residents)
  
 
   const indexOfLastPost = page * postsPerPage;
