@@ -6,11 +6,8 @@ import PagiLocation from "../component/PagiLocation";
 import { useDispatch, useSelector } from "react-redux";
 import { setİsLoading,setData } from "../featur/api";
 const Location = () => {
-  const newArray = [];
-  const [first, setFirst] = useState([])
   const navigate = useNavigate();
-  // const [data, setData] = useState();
-  const {isLoading,data} = useSelector((state)=>state.api)
+  const {data} = useSelector((state)=>state.api)
     const dispatch = useDispatch()
   const [page, setPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(3);
@@ -18,18 +15,6 @@ const Location = () => {
 
   const initialUrl = "https://rickandmortyapi.com/api/location?page=";
 
-  // const location = async (url) => {
-  //   try {
-  //     const response = await axios(url)
-  //     const data = await response?.data?.results
-  //     const info = await response?.data?.info
-  //     const pages = await response?.data?.info?.next?.split("")?.reverse()[0]
-  //     setİnfo(info)
-  //     dispatch(setİsLoading(false))
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
 const allLocation = async (url) => {
   let data = [];

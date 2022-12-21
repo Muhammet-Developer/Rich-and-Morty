@@ -2,26 +2,24 @@ import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Logo1 from "../img/rickAndMort.png"
 import Back from "../img/back.png"
-import Charters from "../Pages/Characters"
-import ChartersDetails from "../Pages/CharactersDetails"
 import Location from "../Pages/Location"
 const Navbar = () => {
 const navstyle = {
     display:"flex",
     justifyContent: "space-between",
 }
-const geri = () => {
+const back = () => {
   navigate(-1)
 }
 useEffect(() => {
- geri()
+  back()
 }, [])
 
 const navigate = useNavigate();
   return (
     <>
     <div style={navstyle}>
-      {Location && <img src={Back} className="back" alt="Navbar" onClick={()=>geri()}/>}
+      {Location && <img src={Back} className="back" alt="Navbar" onClick={()=>back()}/>}
       <Link to="/"><img src={Logo1} className="ricky" alt="Navbar"/></Link>
     <div></div>
     </div>

@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import ButtonStyle from "./Button.module.scss";
 import {setCharactersData} from "../featur/api"
 const Buttonlar = ({dataToFilterd}) => {
-  const {charactersData} = useSelector((state)=>state.api)
   const dispatch = useDispatch();
     const filterItem = (val) => {
         const filterAlive = dataToFilterd.filter((filtered) => {

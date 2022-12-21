@@ -20,8 +20,8 @@ const PagiLocation = ({ postsPerPage, setPage}) => {
     <>
   <div className={PaginationStyle.center}>
     <Container sx={{display:"flex", justifyContent:"center",marginTop:"2rem"}} >
-    <Stack>
-      <Pagination count={pagesNumbers.length} color="primary" onChange={handleChange} />
+    <Stack >
+      <Pagination count={pagesNumbers.length} onChange={handleChange} />
     </Stack>
     </Container>
    </div>

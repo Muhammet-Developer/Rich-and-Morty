@@ -21,12 +21,11 @@ const OtherCharacters = ({person}) => {
         </div>
         {otherChacrters?.map((other, id) => (
           <div className={OtherCharactersStyle.block} key={id} 
-          // onClick={()=> navigate(dispatch(setDeneme(other)))}
           >
             <img
               src={other?.image}
               className={OtherCharactersStyle.image}
-              alt=""
+              alt="other Characters"
             />
             <ul className={OtherCharactersStyle.ul}>
               <li>
@@ -37,9 +36,8 @@ const OtherCharacters = ({person}) => {
               </li>
               <li className={OtherCharactersStyle.li3}>
                 {person?.status === "Alive" ? other?.type === "" ? `${other?.type  === "" ? "unknown":other?.type}-${other?.gender  === "" ? "unknown":other?.gender}`:"unknown" :""}
-                {/* {person?.status === "Alive" ?  other?.type === "" ? `${other?.type}-${other?.gender}` :"as":""} */}
                 {person?.status === "Dead" ? other?.type === "" ?  `${other?.type  === "" ? "unknown":other?.type}-${other?.gender  === "" ? "unknown":other?.gender}`:"unknown" :""}
-                {person?.status === "unknown" ? other?.type === "" ? "unknown" `${other?.type  === "" ? "unknown":other?.type}-${other?.gender  === "" ? "unknown":other?.gender}`:"unknown" :""}
+                {person?.status === "unknown" ? other?.type === "" ?`${other?.type  === "" ? "unknown":other?.type}-${other?.gender  === "" ? "unknown":other?.gender}`:"unknown" :""}
               </li>
             </ul>
           </div>

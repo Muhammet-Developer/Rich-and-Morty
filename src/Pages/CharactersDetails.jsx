@@ -1,11 +1,8 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import OtherCharacters from '../component/OtherCharacters';
 import CharactersDetailsStyle from "../scss/CharactersDetails.module.scss";
 const CharactersDetails = () => {
     const {state:person} = useLocation();
-    const { } = useSelector((state) => state.api);
     
   return (
     <>
