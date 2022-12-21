@@ -22,15 +22,20 @@ const Characters = () => {
   
   const newData =[];
   const charcters = () => {
-    residents?.map(async(person)=>{
-      await axios.get(person).then(data1=>{
-        newData.push(data1.data)
-        dispatch(setCharactersData([...newData]))
+    setLoading(true)
+    try {
+      residents?.map(async(person)=>{
+        await axios.get(person).then(data1=>{
+          newData.push(data1.data)
+          setLoading(false)
+          dispatch(setCharactersData([...newData]))
+        })
       })
-    })
+    } catch (error) {
+      console.log(error)
+    }
   } 
   const[dataToFilterd,setDataToFilterd]= useState(newData)
-
 
   const indexOfLastPost = page * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -38,7 +43,6 @@ const Characters = () => {
   
   useEffect(() => {
     charcters()
-    setLoading(true)
 }, [])
 
   return (
@@ -55,14 +59,13 @@ const Characters = () => {
     </div>
     <div className={CharactersStyle.container}>
         
-      {/* {currentPost?.map((person,item)=>{
+      {currentPost?.map((person,item)=>{
         return(
           <div key={item} >
-            
-          {loading ? <Catalog/> : 
+          {loading ? <Catalog/> : (
           <div className={CharactersStyle.image}  
           onClick={()=> navigate(`${person.id+person.name}`,{state:person})}>      
-          <img src={person?.image ||Noİmg} className={CharactersStyle.cardİmg} alt="characterİmg" />          
+          {loading? <h1>asdad</h1>:<img src={person?.image || Noİmg} className={CharactersStyle.cardİmg} alt="characterİmg" />  }        
           <h3><b>{person?.name}</b></h3>
           <ul className={CharactersStyle.ul}>
           {person?.status === "Alive" && <><li className={CharactersStyle.li}><div className={CharactersStyle.alive}></div></li><li>&nbsp;{person?.status}</li>
@@ -73,29 +76,10 @@ const Characters = () => {
           <li>&nbsp;-&nbsp;</li><li>{person?.species}</li></>} 
           </ul>
           </div>
-        }
+      )}
           </div>
           )
-        })} */}
-        {loading ? currentPost?.map((person,item)=>{
-          return(
-          <div className={CharactersStyle.image}  
-          onClick={()=> navigate(`${person.id+person.name}`,{state:person})}>      
-          <img src={person?.image ||Noİmg} className={CharactersStyle.cardİmg} alt="characterİmg" />          
-          <h3><b>{person?.name}</b></h3>
-          <ul className={CharactersStyle.ul}>
-          {person?.status === "Alive" && <><li className={CharactersStyle.li}><div className={CharactersStyle.alive}></div></li><li>&nbsp;{person?.status}</li>
-          <li>&nbsp;-&nbsp;</li><li>{person?.species}</li></>}
-          {person?.status === "Dead" && <><li className={CharactersStyle.li}><div className={CharactersStyle.dead}></div></li><li>&nbsp;{person?.status}</li>
-          <li>&nbsp;-&nbsp;</li><li>{person?.species}</li></>}
-          {person?.status === "unknown" && <><li className={CharactersStyle.li}><div className={CharactersStyle.unkown}></div></li><li>&nbsp;{person?.status}</li>
-          <li>&nbsp;-&nbsp;</li><li>{person?.species}</li></>} 
-          </ul>
-          </div>
-          )
-        }):currentPost?.map((asd)=>(
-          <Catalog/>
-        ))}
+        })}
         </div>
 
         <Pagination 
