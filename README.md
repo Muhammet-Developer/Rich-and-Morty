@@ -20,7 +20,7 @@ DEMO: https://delightful-cannoli-89d633.netlify.app/
 * Forward and backward options are used as the pagination structure at the bottom of the page.
 * For each forward or reverse, the next/previous 10 characters are listed.
 * In the Characters page, the characters can be sorted according to their 4 different states.
-* These are; they are all dead, alive and unknown, filtered by clicking any button.
+* These are; they are all dead, alive and unknown. Filtered by clicking any button.
 * When a character card component is clicked, the character's detail page is reached and the data of the character details are listed.
 * Other characters are listed on the character detail page.
 * Other characters are listed by. If the clicked character is alive, dead or unknown, the characters with him are filtered to the screen and listed as 6 pieces.
