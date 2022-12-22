@@ -8,7 +8,7 @@ import PaginationCharacters from "../component/PaginationCharacters";
 import NoCharacters404 from "../assets/404error.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFail, fetchStart, setCharactersData } from "../featur/api";
-import CharactersLoader from "../component/CharactersLoader";
+import {CharactersImageLoader, CharactersLoader} from "../component/CharactersLoader";
 const Characters = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -17,7 +17,6 @@ const Characters = () => {
 
   const [page, setPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(10);
-
   const newData = [];
   const charcters = () => {
     dispatch(fetchStart());
@@ -33,8 +32,8 @@ const Characters = () => {
       console.log(error);
     }
   };
-  const [dataToFilterd, setDataToFilterd] = useState(newData);
 
+  const [dataToFilterd, setDataToFilterd] = useState(newData);
   const indexOfLastPost = page * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPost = charactersData?.slice(indexOfFirstPost, indexOfLastPost);
@@ -80,11 +79,14 @@ const Characters = () => {
                         })
                       }
                     >
-                      <img
+                      
+                     { isLoading ? (
+                        <CharactersImageLoader/>
+                  ) : (<img
                         src={person?.image || Noİmg}
                         className={CharactersStyle.cardİmg}
                         alt="characterİmg"
-                      />
+                      />)}
                       <h3>
                         <b>{person?.name}</b>
                       </h3>

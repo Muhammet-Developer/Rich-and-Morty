@@ -1,6 +1,6 @@
 import React from 'react'
 import ContentLoader from 'react-content-loader'
-const CharactersLoader =({borderRadius = 20,...props})  => (
+export const CharactersLoader =({borderRadius = 20,...props})  => (
     <ContentLoader viewBox="0 26 400 475" height={400} width={300} {...props}>
     <circle cx="20" cy="455" r="20" />
     <rect x="0" y="410" rx="4" ry="4" width="200" height="20" />
@@ -8,4 +8,8 @@ const CharactersLoader =({borderRadius = 20,...props})  => (
     <rect x="0" y="0" rx={borderRadius} ry={borderRadius} width="650" height="400" />
   </ContentLoader>
 )
-export default CharactersLoader
+export const CharactersImageLoader = ({borderRadius = 20,...props})  => (
+  <ContentLoader viewBox="0 26 400 475" height={400} width={300} {...props}>
+  <rect x="0" y="0" rx={borderRadius} ry={borderRadius} width="650" height="400" />
+</ContentLoader>
+)
