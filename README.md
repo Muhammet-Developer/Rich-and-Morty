@@ -28,6 +28,8 @@ DEMO: https://delightful-cannoli-89d633.netlify.app/
 
 # Project Outcome
 
+![ezgif-5-25eb887ad5](https://user-images.githubusercontent.com/108489800/209237152-be9785dd-43bf-4285-8e95-82da25cf2d83.gif)
+
 # Project Skeleton
 
 `The Rich And Morty (folder)
@@ -36,7 +38,10 @@ DEMO: https://delightful-cannoli-89d633.netlify.app/
 │    └── store.js
 |
 │── assets
-|    └── 404error.jpg
+|    ├── 404error.jpg
+│    ├── back.png
+|    ├── noİmg.jpg
+|    └── rickAndMort.png
 |
 │── buttons
 |    ├── Button.module.scss
@@ -48,20 +53,19 @@ DEMO: https://delightful-cannoli-89d633.netlify.app/
 |    ├── OtherCharacters.jsx
 |    ├── PaginationLocation.jsx
 |    └── PaginationCharacters.jsx
+|
 ├── featur
 │    └── api.js
 |
-├── img
-│    ├── back.png
-|    ├── noİmg.jpg
-|    └── rickAndMort.png
 ├── pages
 │    ├── Characters.jsx
 │    ├── CharactersDetails.jsx
 │    ├── Location.jsx
 │    └── NoCharacters404.jsx
+|
 ├── Router
 │    └── AppRouter.svg
+|
 ├── scss
 │    ├── _reset.scss
 │    ├── _variables.scss
@@ -72,6 +76,7 @@ DEMO: https://delightful-cannoli-89d633.netlify.app/
 │    ├── OtherCharacters.module.scss
 |    ├── Pagination.module.scss
 │    └── Style.scss
+|
 ├── App.css
 ├── App.js
 ├── index.css
@@ -91,6 +96,10 @@ Below is an example of how you can instruct your audience on installing and sett
 2. Install YARN packages
 
 `yarn install`
+
+3. The project is ready, you can start using it now. You can run:
+  
+  `yarn start`
 
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
