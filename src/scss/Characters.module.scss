@@ -20,6 +20,9 @@ $large:425px;
         min-height: 300px;
         cursor: pointer;
     }
+    .name{
+        max-width: 300px;
+    }
     .dead{
         width: 25px;
         height: 25px;
@@ -47,14 +50,6 @@ $large:425px;
             margin-left: 35px;
         }
     }
-}
-.loaderDiv{
-    min-width: 300px;
-    min-height: 300px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .ul{
     margin-top: 3px;

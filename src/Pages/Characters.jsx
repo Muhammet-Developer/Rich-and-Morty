@@ -87,7 +87,7 @@ const Characters = () => {
                         className={CharactersStyle.cardİmg}
                         alt="characterİmg"
                       />)}
-                      <h3>
+                      <h3 className={CharactersStyle.name}>
                         <b>{person?.name}</b>
                       </h3>
                       <ul className={CharactersStyle.ul}>
