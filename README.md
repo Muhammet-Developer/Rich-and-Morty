@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# About The Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Rick and Morty Serial Application is an application where users can review The Rich and Morty Serial location and characters and see their details.
 
-## Available Scripts
+DEMO: https://delightful-cannoli-89d633.netlify.app/
+# Description
 
-In the project directory, you can run:
+* The application is prepared using the Next.JS Framework.
+* React library and React Hooks structures are used in the application.
+* All features of the project are in working condition.
+* The project looks responsive on all screens.
+* https://rickandmortyapi.com/ Api is used for application data.
+* MUI and SCSS are used as UI library.
+* Loading Skeleton and content loader libraries are used.
+* Using the relevant API, 4 locations are used on the home page.
+* A total of 126 location screens in the relevant API are printed.
+* At the bottom of the main page, forward and backward options are used as the pagination structure.
+* In each forward or reverse state, the next/previous 4 loactions are listed.
+* If any location is clicked, the characters in the location are printed on the screen.
+* Forward and backward options are used as the pagination structure at the bottom of the page.
+* For each forward or reverse, the next/previous 10 characters are listed.
+* In the Characters page, the characters can be sorted according to their 4 different states.
+* These are; they are all dead, alive and unknown, filtered by clicking any button.
+* When a character card component is clicked, the character's detail page is reached and the data of the character details are listed.
+* Other characters are listed on the character detail page.
+* Other characters are listed by. If the clicked character is alive, dead or unknown, the characters with him are filtered to the screen and listed as 6 pieces.
+* Application dependencies are managed with the yarn package manager.
 
-### `yarn start`
+# Project Outcome
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Project Skeleton
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`The Rich And Morty (folder)
+|
+├── app
+│    └── store.js
+|
+│── assets
+|    └── 404error.jpg
+|
+│── buttons
+|    ├── Button.module.scss
+|    └── Buttons.jsx
+|
+|── component
+|    ├── CharactersLoader.jsx
+|    ├── Navbar.jsx
+|    ├── OtherCharacters.jsx
+|    ├── PaginationLocation.jsx
+|    └── PaginationCharacters.jsx
+├── featur
+│    └── api.js
+|
+├── img
+│    ├── back.png
+|    ├── noİmg.jpg
+|    └── rickAndMort.png
+├── pages
+│    ├── Characters.jsx
+│    ├── CharactersDetails.jsx
+│    ├── Location.jsx
+│    └── NoCharacters404.jsx
+├── Router
+│    └── AppRouter.svg
+├── scss
+│    ├── _reset.scss
+│    ├── _variables.scss
+│    ├── Characters.module.scss
+│    ├── CharactersDetails.module.scss
+│    ├── Location.module.scss
+│    ├── NoCharacters404.module.scss
+│    ├── OtherCharacters.module.scss
+|    ├── Pagination.module.scss
+│    └── Style.scss
+├── App.css
+├── App.js
+├── index.css
+└── index.js`
+# Getting Started
 
-### `yarn test`
+This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `yarn build`
+Below is an example of how you can instruct your audience on installing and setting up your app. This template does not rely on any external dependencies or services.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`git clone https://github.com/Muhammet-Developer/task-app.git`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install YARN packages
 
-### `yarn eject`
+`yarn install`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Project Development Process
+* 1.: For Api `https://rickandmortyapi.com/api/location`
+* 2.: Scss  was used as a css library for styling purposes in the project. MUI is used for pagination.
+* 3.: The application is designed in a responsive structure that can run smoothly on mobile and desktop platforms.
+* 4.: Developed using Redux in the project
+* 5.: The application has been shared on Github. During the project preparation, the development phases were committed and pushed into the warehouse.
+* 6.: Used yarn package manager during application development.
+* 7.: The project was finally deployed using the netlify service.
