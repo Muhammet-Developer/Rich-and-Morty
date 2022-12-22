@@ -10,7 +10,7 @@ const Location = () => {
   const {data} = useSelector((state)=>state.api)
     const dispatch = useDispatch()
   const [page, setPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(3);
+  const [postsPerPage, setPostsPerPage] = useState(4);
   
 
   const initialUrl = "https://rickandmortyapi.com/api/location?page=";

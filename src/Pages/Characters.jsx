@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Buttonlar from "../buttons/Buttonlar";
+import Buttonlar from "../buttons/Buttons";
 import CharactersStyle from "../scss/Characters.module.scss";
 import Noİmg from "../img/noİmg.jpg";
 import PaginationCharacters from "../component/PaginationCharacters";

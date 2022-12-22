@@ -3,7 +3,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import Logo1 from "../img/rickAndMort.png"
 import Back from "../img/back.png"
 import Location from "../Pages/Location"
+import { useSelector } from 'react-redux'
+import Characters from '../Pages/Characters'
 const Navbar = () => {
+  const {data} = useSelector((state)=>state.api)
+
 const navstyle = {
     display:"flex",
     justifyContent: "space-between",
@@ -19,7 +23,7 @@ const navigate = useNavigate();
   return (
     <>
     <div style={navstyle}>
-      {Location && <img src={Back} className="back" alt="Navbar" onClick={()=>back()}/>}
+    <img src={Back} className="back" alt="Navbar" onClick={()=>back()}/> 
       <Link to="/"><img src={Logo1} className="ricky" alt="Navbar"/></Link>
     <div></div>
     </div>
