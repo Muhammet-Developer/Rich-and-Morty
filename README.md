@@ -31,8 +31,8 @@ DEMO: https://delightful-cannoli-89d633.netlify.app/
 ![ezgif-5-25eb887ad5](https://user-images.githubusercontent.com/108489800/209237152-be9785dd-43bf-4285-8e95-82da25cf2d83.gif)
 
 # Project Skeleton
-
-`The Rich And Morty (folder)
+```bash
+The Rich And Morty (folder)
 |
 ├── app
 │    └── store.js
@@ -80,7 +80,8 @@ DEMO: https://delightful-cannoli-89d633.netlify.app/
 ├── App.css
 ├── App.js
 ├── index.css
-└── index.js`
+└── index.js
+```
 # Getting Started
 
 This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
