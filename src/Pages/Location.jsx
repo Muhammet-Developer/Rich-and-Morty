@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LocationStyle from "../scss/Location.module.scss";
-import PagiLocation from "../component/PagiLocation";
+import PaginationLocation from "../component/PaginationLocation";
 import { useDispatch, useSelector } from "react-redux";
 import { setİsLoading,setData } from "../featur/api";
 const Location = () => {
@@ -72,7 +72,7 @@ const allLocation = async (url) => {
           );
         })}
       </div>
-      <PagiLocation
+      <PaginationLocation
       postsPerPage={postsPerPage} 
       setPage={setPage}
       page={page}

@@ -8,7 +8,7 @@ import PaginationCharacters from "../component/PaginationCharacters";
 import NoCharacters404 from "../assets/404error.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFail, fetchStart, setCharactersData } from "../featur/api";
-import Catalog from "../component/Catalog";
+import CharactersLoader from "../component/CharactersLoader";
 const Characters = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -70,7 +70,7 @@ const Characters = () => {
               return (
                 <div key={item}>
                   {isLoading ? (
-                    <Catalog />
+                    <CharactersLoader />
                   ) : (
                     <div
                       className={CharactersStyle.image}
