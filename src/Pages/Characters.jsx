@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Buttonlar from "../buttons/Buttons";
 import CharactersStyle from "../scss/Characters.module.scss";
-import Noİmg from "../img/noİmg.jpg";
+import Noİmg from "../assets/noİmg.jpg";
 import PaginationCharacters from "../component/PaginationCharacters";
 import NoCharacters404 from "../assets/404error.jpg";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchFail, fetchStart, setCharactersData } from "../featur/api";
+import { fetchFail, fetchStart, setCharactersData } from "../features/api";
 import {CharactersImageLoader, CharactersLoader} from "../component/CharactersLoader";
 const Characters = () => {
   const navigate = useNavigate();

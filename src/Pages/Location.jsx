@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import LocationStyle from "../scss/Location.module.scss";
 import PaginationLocation from "../component/PaginationLocation";
 import { useDispatch, useSelector } from "react-redux";
-import { setİsLoading,setData } from "../featur/api";
+import { setİsLoading,setData } from "../features/api";
 const Location = () => {
   const navigate = useNavigate();
   const {data} = useSelector((state)=>state.api)

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Logo1 from "../img/rickAndMort.png";
-import Back from "../img/back.png";
+import Logo1 from "../assets/rickAndMort.png";
+import Back from "../assets/back.png";
 const Navbar = () => {
   const navstyle = {
     display: "flex",

@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ButtonStyle from "./Button.module.scss";
-import {setCharactersData} from "../featur/api"
+import {setCharactersData} from "../features/api"
 const Buttonlar = ({dataToFilterd}) => {
   const dispatch = useDispatch();
     const filterItem = (val) => {
